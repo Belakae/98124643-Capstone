@@ -245,7 +245,7 @@ void Data_Gather::Send_Data()
 
     // Writing data to file
 
-    visc << many_size << " ";
+    visc << many_size << ",";
 
     /*
     for(double value : many_readings)
