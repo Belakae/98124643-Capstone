@@ -1,30 +1,3 @@
-%% Load Data
-
-% file1 = importdata('CoM_1.txt',' ',1);
-% file2 = importdata('CoM_2.txt',' ',1);
-% file3 = importdata('CoM_3.txt',' ',1);
-% file4 = importdata('CoM_4.txt',' ',1);
-% file5 = importdata('CoM_5.txt',' ',1);
-% file6 = importdata('CoM_6.txt',' ',1);
-% file7 = importdata('CoM_7.txt',' ',1);
-% file8 = importdata('CoM_8.txt',' ',1);
-% file9 = importdata('CoM_9.txt',' ',1);
-% file10 = importdata('CoM_10.txt',' ',1);
-% file11 = importdata('visc.txt',' ',1);
-% file12 = importdata('zero.txt',' ',1);
-% 
-% com_1 = file1.data;
-% com_2 = file2.data;
-% com_3 = file3.data;
-% com_4 = file4.data;
-% com_5 = file5.data;
-% com_6 = file6.data;
-% com_7 = file7.data;
-% com_8 = file8.data;
-% com_9 = file9.data;
-% com_10 = file10.data;
-% visc = file11.data;
-% zero = file12.data;
 
 %% Read Matrix
 
@@ -41,6 +14,44 @@ com_10_raw = readmatrix('CoM_10.txt');
 visc_raw = readmatrix('visc.txt');
 zero_raw = readmatrix('zero.txt');
 
+%% Seperate size and angle from data
+
+com_1_angle = com_1_raw(1);
+com_1_size = com_1_raw(2);
+
+com_2_angle = com_2_raw(1);
+com_2_size = com_2_raw(2);
+
+com_3_angle = com_3_raw(1);
+com_3_size = com_3_raw(2);
+
+com_4_angle = com_4_raw(1);
+com_4_size = com_4_raw(2);
+
+com_5_angle = com_5_raw(1);
+com_5_size = com_5_raw(2);
+
+com_6_angle = com_6_raw(1);
+com_6_size = com_6_raw(2);
+
+com_7_angle = com_7_raw(1);
+com_7_size = com_7_raw(2);
+
+com_7_angle = com_7_raw(1);
+com_7_size = com_7_raw(2);
+
+com_8_angle = com_8_raw(1);
+com_8_size = com_8_raw(2);
+
+com_9_angle = com_9_raw(1);
+com_9_size = com_9_raw(2);
+
+com_10_angle = com_10_raw(1);
+com_10_size = com_10_raw(2);
+
+zero_size = zero_raw(1);
+
+
 %% Format Data and Remove Outliers
 
 com_1_data = rmoutliers(com_1_raw(3:end),'mean');
@@ -54,7 +65,6 @@ com_8_data = rmoutliers(com_8_raw(3:end),'mean');
 com_9_data = rmoutliers(com_9_raw(3:end),'mean');
 com_10_data = rmoutliers(com_10_raw(3:end),'mean');
 
-visc_data = rmoutliers(visc_raw(2:end),'mean');
 zero_data = rmoutliers(zero_raw(2:end),'mean');
 
 % Get the mean of each data array
@@ -72,6 +82,185 @@ com_10_mean = mean(com_10_data)
 
 zero_mean = mean(zero_data)
 
+
+%% Plot the Raw and processed data
+
+figure1 = figure
+plot(com_1_raw(3:end),'b')
+title('CoM 1 Raw');
+ylabel('Nm');
+
+figure2 = figure
+plot(com_1_data,'g')
+yline(com_1_mean,'k--')
+title('CoM 1 Processed and Mean');
+ylabel('Nm');
+
+saveas(figure1,'com1raw.jpg');
+saveas(figure2,'com1processed.jpg');
+
+
+%--------------------------------------
+figure1 = figure
+plot(com_2_raw(3:end),'b')
+title('CoM 2 Raw');
+ylabel('Nm');
+
+figure2 = figure
+plot(com_2_data,'g')
+yline(com_2_mean,'k--')
+title('CoM 2 Processed and Mean');
+ylabel('Nm');
+
+saveas(figure1,'com2raw.jpg');
+saveas(figure2,'com2processed.jpg');
+
+
+%--------------------------------------
+figure1 = figure
+plot(com_3_raw(3:end),'b')
+title('CoM 3 Raw');
+ylabel('Nm');
+
+figure2 = figure
+plot(com_3_data,'g')
+yline(com_3_mean,'k--')
+title('CoM 3 Processed and Mean');
+ylabel('Nm');
+
+saveas(figure1,'com3raw.jpg');
+saveas(figure2,'com3processed.jpg');
+
+
+%--------------------------------------
+figure1 = figure
+plot(com_4_raw(3:end),'b')
+title('CoM 4 Raw');
+ylabel('Nm');
+
+figure2 = figure
+plot(com_4_data,'g')
+yline(com_4_mean,'k--')
+title('CoM 4 Processed and Mean');
+ylabel('Nm');
+
+saveas(figure1,'com4raw.jpg');
+saveas(figure2,'com4processed.jpg');
+
+
+%--------------------------------------
+figure1 = figure
+plot(com_5_raw(3:end),'b')
+title('CoM 5 Raw');
+ylabel('Nm');
+
+figure2 = figure
+plot(com_5_data,'g')
+yline(com_5_mean,'k--')
+title('CoM 5 Processed and Mean');
+ylabel('Nm');
+
+saveas(figure1,'com5raw.jpg');
+saveas(figure2,'com5processed.jpg');
+
+
+%--------------------------------------
+figure1 = figure
+plot(com_6_raw(3:end),'b')
+title('CoM 6 Raw');
+ylabel('Nm');
+
+figure2 = figure
+plot(com_6_data,'g')
+yline(com_6_mean,'k--')
+title('CoM 6 Processed and Mean');
+ylabel('Nm');
+
+saveas(figure1,'com6raw.jpg');
+saveas(figure2,'com6processed.jpg');
+
+
+%--------------------------------------
+figure1 = figure
+plot(com_7_raw(3:end),'b')
+title('CoM 7 Raw');
+ylabel('Nm');
+
+figure2 = figure
+plot(com_7_data,'g')
+yline(com_7_mean,'k--')
+title('CoM 7 Processed and Mean');
+ylabel('Nm');
+
+saveas(figure1,'com7raw.jpg');
+saveas(figure2,'com7processed.jpg');
+
+
+%--------------------------------------
+figure1 = figure
+plot(com_8_raw(3:end),'b')
+title('CoM 8 Raw');
+ylabel('Nm');
+
+figure2 = figure
+plot(com_8_data,'g')
+yline(com_8_mean,'k--')
+title('CoM 8 Processed and Mean');
+ylabel('Nm');
+
+saveas(figure1,'com8raw.jpg');
+saveas(figure2,'com8processed.jpg');
+
+
+%--------------------------------------
+figure1 = figure
+plot(com_9_raw(3:end),'b')
+title('CoM 9 Raw');
+ylabel('Nm');
+
+figure2 = figure
+plot(com_9_data,'g')
+yline(com_9_mean,'k--')
+title('CoM 9 Processed and Mean');
+ylabel('Nm');
+
+saveas(figure1,'com9raw.jpg');
+saveas(figure2,'com9processed.jpg');
+
+
+%--------------------------------------
+figure1 = figure
+plot(com_10_raw(3:end),'b')
+title('CoM 10 Raw');
+ylabel('Nm');
+
+figure2 = figure
+plot(com_10_data,'g')
+yline(com_10_mean,'k--')
+title('CoM 10 Processed and Mean');
+ylabel('Nm');
+
+saveas(figure1,'com10raw.jpg');
+saveas(figure2,'com10processed.jpg');
+
+
+%--------------------------------------
+figure1 = figure
+plot(zero_raw(2:end),'b')
+title('Zero Raw');
+ylabel('Nm');
+
+figure2 = figure
+plot(zero_data,'g')
+yline(zero_mean,'k--')
+title('Zero Processed and Mean');
+ylabel('Nm');
+
+saveas(figure1,'zeroraw.jpg');
+saveas(figure2,'zeroprocessed.jpg');
+
+
+%--------------------------------------
 
 
 %% Knowns
