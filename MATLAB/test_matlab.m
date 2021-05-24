@@ -352,76 +352,40 @@ x_l = x_B*cos(theta) + y_B*sin(theta) - 200*sin(theta)
 
 % Setting up initial variables
 
-Tz = 0.1719; %Nm
+Tz = 0.509296794 - 0.005949557; %Nm
 g = 9.81;
-mc = 0.336; %kg
+mc = 0.339; %kg
 L = 0.260; %m
 Lg = 0.160; %m
 R = 0.03015; %m
 
-theta = -20.2861*pi/180;
-ml = 0.139; %kg
-
-
-%fun_1 = (Tz - g*(mc*((L/2)-Lg)*sin(theta) + ml*find_CoM(theta,R,Lg,h,1)));   
-%fun_2 = @(h_1)(Tz - g*(mc*((L/2)-Lg)*sin(theta) + ml*find_CoM(theta,R,Lg,h_2,2)));
+theta = -50.2848*pi/180;
+ml = 0.188; %kg
 
 fplot(@(h) (Tz - g*(mc*((L/2)-Lg)*sin(theta) + ml*find_CoM(theta,R,Lg,h,1))), [0 0.2]);
 
-grid on
+%fplot(@(h) (ml*find_CoM(theta,R,Lg,h,1)));
 
-h = 0;
+grid on
+title('CoM 10 @ -50.2848 degrees');
+xlabel('Liquid height (m)');
+ylabel('Error between experimental and calculated torque (Nm)');
+
+h = 0.00;
+
 ans = (Tz - g*(mc*((L/2)-Lg)*sin(theta) + ml*find_CoM(theta,R,Lg,h,1)))
 
 
-V = (pi*R^2)*((0.0106152/cos(theta)) - 2*R*tan(theta)) + (pi*R^3)*tan(theta)
- %x0 = 0;
- %x = lsqnonlin(fun_1,x0)
-
-% fun = @(h)(g*(mc*((L/2)-Lg)*sin(theta) + ml*find_CoM(theta,R,Lg,h,1)));
-% 
-% 
-% 
-% goal = Tz;
-% 
-% weight = 1;
-% 
-% h0 = 0;
-% 
-% h = fgoalattain(fun,h0,goal,weight)
-% 
-% answer = (g*(mc*((L/2)-Lg)*sin(theta) + ml*find_CoM(theta,R,Lg,h,1)))
+V = ((pi*R^2)*((h/cos(theta)) - 2*R*tan(theta)) + (pi*R^3)*tan(theta))*10^6
 
 
 
 
-% for (int i = 0; i<data_size; i++)
-%     
-%     % Set up the changing variables
-%     
-%     Tz = CoM_data(i);
-%     theta = Angle_data(i);
-%     
-%     h_1 = fminbnd(fun_1,0,200);
-%     
-%     h_2 = fminbnd(fun_2,0,200);
-%     
-%     % It will then select which value for h is the best ? (figure out how
-%     % it will tell)
-% end
 
 
-% fun = @(h)(Tz - g*(mc*((L/2)-Lg)*sin(theta) + ml*find_CoM(theta,R,Lg,h,1)));
-% 
-% h = fminbnd(fun_1,0,200);
-% 
-% answer = (Tz - g*(a + ml*find_CoM(theta,R,Lg,h,1)))
 
-% Look at extra options for the fminbnd function, can plot results
 
-% fun_1 = @(h_1)(Tz - g*(mc*((L/2)-Lg)*sin(theta) + ml*find_CoM(theta,R,Lg,h_1,1)));
-% 
-% 
+
 
 
 
