@@ -89,12 +89,14 @@ figure1 = figure
 plot(com_1_raw(3:end),'b')
 title('CoM 1 Raw');
 ylabel('Nm');
+xlabel('No. of readings');
 
 figure2 = figure
 plot(com_1_data,'g')
-yline(com_1_mean,'k--')
+yline(com_1_mean,'k--','Mean')
 title('CoM 1 Processed and Mean');
 ylabel('Nm');
+xlabel('No. of readings');
 
 saveas(figure1,'com1raw.jpg');
 saveas(figure2,'com1processed.jpg');
@@ -105,12 +107,14 @@ figure1 = figure
 plot(com_2_raw(3:end),'b')
 title('CoM 2 Raw');
 ylabel('Nm');
+xlabel('No. of readings');
 
 figure2 = figure
 plot(com_2_data,'g')
-yline(com_2_mean,'k--')
+yline(com_2_mean,'k--','Mean')
 title('CoM 2 Processed and Mean');
 ylabel('Nm');
+xlabel('No. of readings');
 
 saveas(figure1,'com2raw.jpg');
 saveas(figure2,'com2processed.jpg');
@@ -121,12 +125,14 @@ figure1 = figure
 plot(com_3_raw(3:end),'b')
 title('CoM 3 Raw');
 ylabel('Nm');
+xlabel('No. of readings');
 
 figure2 = figure
 plot(com_3_data,'g')
-yline(com_3_mean,'k--')
+yline(com_3_mean,'k--','Mean')
 title('CoM 3 Processed and Mean');
 ylabel('Nm');
+xlabel('No. of readings');
 
 saveas(figure1,'com3raw.jpg');
 saveas(figure2,'com3processed.jpg');
@@ -137,12 +143,14 @@ figure1 = figure
 plot(com_4_raw(3:end),'b')
 title('CoM 4 Raw');
 ylabel('Nm');
+xlabel('No. of readings');
 
 figure2 = figure
 plot(com_4_data,'g')
-yline(com_4_mean,'k--')
+yline(com_4_mean,'k--','Mean')
 title('CoM 4 Processed and Mean');
 ylabel('Nm');
+xlabel('No. of readings');
 
 saveas(figure1,'com4raw.jpg');
 saveas(figure2,'com4processed.jpg');
@@ -153,12 +161,14 @@ figure1 = figure
 plot(com_5_raw(3:end),'b')
 title('CoM 5 Raw');
 ylabel('Nm');
+xlabel('No. of readings');
 
 figure2 = figure
 plot(com_5_data,'g')
-yline(com_5_mean,'k--')
+yline(com_5_mean,'k--','Mean')
 title('CoM 5 Processed and Mean');
 ylabel('Nm');
+xlabel('No. of readings');
 
 saveas(figure1,'com5raw.jpg');
 saveas(figure2,'com5processed.jpg');
@@ -169,12 +179,14 @@ figure1 = figure
 plot(com_6_raw(3:end),'b')
 title('CoM 6 Raw');
 ylabel('Nm');
+xlabel('No. of readings');
 
 figure2 = figure
 plot(com_6_data,'g')
-yline(com_6_mean,'k--')
+yline(com_6_mean,'k--','Mean')
 title('CoM 6 Processed and Mean');
 ylabel('Nm');
+xlabel('No. of readings');
 
 saveas(figure1,'com6raw.jpg');
 saveas(figure2,'com6processed.jpg');
@@ -185,12 +197,14 @@ figure1 = figure
 plot(com_7_raw(3:end),'b')
 title('CoM 7 Raw');
 ylabel('Nm');
+xlabel('No. of readings');
 
 figure2 = figure
 plot(com_7_data,'g')
-yline(com_7_mean,'k--')
+yline(com_7_mean,'k--','Mean')
 title('CoM 7 Processed and Mean');
 ylabel('Nm');
+xlabel('No. of readings');
 
 saveas(figure1,'com7raw.jpg');
 saveas(figure2,'com7processed.jpg');
@@ -201,12 +215,14 @@ figure1 = figure
 plot(com_8_raw(3:end),'b')
 title('CoM 8 Raw');
 ylabel('Nm');
+xlabel('No. of readings');
 
 figure2 = figure
 plot(com_8_data,'g')
-yline(com_8_mean,'k--')
+yline(com_8_mean,'k--','Mean')
 title('CoM 8 Processed and Mean');
 ylabel('Nm');
+xlabel('No. of readings');
 
 saveas(figure1,'com8raw.jpg');
 saveas(figure2,'com8processed.jpg');
@@ -217,12 +233,14 @@ figure1 = figure
 plot(com_9_raw(3:end),'b')
 title('CoM 9 Raw');
 ylabel('Nm');
+xlabel('No. of readings');
 
 figure2 = figure
 plot(com_9_data,'g')
-yline(com_9_mean,'k--')
+yline(com_9_mean,'k--','Mean')
 title('CoM 9 Processed and Mean');
 ylabel('Nm');
+xlabel('No. of readings');
 
 saveas(figure1,'com9raw.jpg');
 saveas(figure2,'com9processed.jpg');
@@ -233,12 +251,14 @@ figure1 = figure
 plot(com_10_raw(3:end),'b')
 title('CoM 10 Raw');
 ylabel('Nm');
+xlabel('No. of readings');
 
 figure2 = figure
 plot(com_10_data,'g')
-yline(com_10_mean,'k--')
+yline(com_10_mean,'k--','Mean')
 title('CoM 10 Processed and Mean');
 ylabel('Nm');
+xlabel('No. of readings');
 
 saveas(figure1,'com10raw.jpg');
 saveas(figure2,'com10processed.jpg');
@@ -249,12 +269,14 @@ figure1 = figure
 plot(zero_raw(2:end),'b')
 title('Zero Raw');
 ylabel('Nm');
+xlabel('No. of readings');
 
 figure2 = figure
 plot(zero_data,'g')
-yline(zero_mean,'k--')
+yline(zero_mean,'k--','Mean')
 title('Zero Processed and Mean');
 ylabel('Nm');
+xlabel('No. of readings');
 
 saveas(figure1,'zeroraw.jpg');
 saveas(figure2,'zeroprocessed.jpg');
@@ -263,118 +285,108 @@ saveas(figure2,'zeroprocessed.jpg');
 %--------------------------------------
 
 
-%% Knowns
 
-% Radius(mm)
-R = 30.15;
-% Angle(degrees)
-theta = -20.2861*pi/180;
-
-%% Unknowns
-
-% Volume
-V = 0;
-
-% Height
-h = 0;
-
-%% Case 1: Bottom face covered, top face dry
-
-% Solving Volume
-V = (pi*R^2)*((h/cos(theta)) - 2*R*tan(theta)) + (pi*R^3)*tan(theta);
-
-% Solving x_B
-x_B = ((pi*R^4)/(4*V))*tan(theta);
-
-% Solving y_B
-a = (R*tan(theta)+(h/cos(theta))-(2*R*tan(theta)))^2;
-b = (0.5*pi*R^2);
-c = ((tan(theta).^2)*(0.125*pi*R^4));
-
-y_B = (1/V)*((a*b)+c);
-
-x_l = x_B*cos(theta) + y_B*sin(theta) - 200*sin(theta)
-
-%% Case 2: Bottom Face partially covered, top face dry
-
-alpha = R - (h/sin(theta));
-beta = sqrt((R^2) - (alpha^2));
-
-% Solving Volume
-
-a = ((2*beta^3)/3);
-b = (pi*R^2)/2;
-c = alpha*beta;
-d = (R^2)*atan(alpha/beta);
-
-V = tan(theta)*(a - alpha*(b - c - d));
-
-% Solving x_B
-
-a = (pi*R^4)/2;
-b = alpha*beta*(2*alpha^2 - R^2);
-c = (R^4)*atan(alpha/beta);
-d = (2*alpha*beta^3)/3;
-
-x_B = (1/V)*tan(theta)*(0.25*(a - b - c) - d);
-
-% Solving y_B
-
-a = (tan(theta).^2)/V;
-b = (alpha^2)/2;
-c = ((pi*R^4)/2) - (alpha*beta) - (R^2)*atan(alpha/beta);
-d = ((pi*R^4)/2) - (alpha*beta)*((2*alpha^2)-(R^2)) - (R^4)*atan(alpha/beta);
-e = (2*alpha*beta^3)/3;
-
-y_B = a*(b*(c) + 0.125*(d) - e);
-
-x_l = x_B*cos(theta) + y_B*sin(theta) - 200*sin(theta)
-
-%% Load Data Test
-
-%[com,visc,zero] = load_data();
-
-
-% CoM_size = CoM(1);
-% CoM_angles = CoM(2:CoM_size+2); %Change when the # of angles matches the # of readings
-% CoM_data = CoM(end-CoM_size+1:end);
-% 
-% Visc_size = Visc(1);
-% Visc_data = Visc(2:end);
-
-%% Test function with switch cases (theta, R, Lg, h(unknown),method)
-
-%x_l = find_CoM([45*pi/180],48.35,200,49,0)
-
-
-% It will select the most appropriate value for the volume from the two
-% generated
+%% Input the CoM torques and angles for each point, zero offset, and liquid mass
 
 % Setting up initial variables
 
-Tz = 0.509296794 - 0.005949557; %Nm
 g = 9.81;
 mc = 0.339; %kg
 L = 0.260; %m
 Lg = 0.160; %m
 R = 0.03015; %m
 
-theta = -50.2848*pi/180;
-ml = 0.188; %kg
+% Water
+%ml = 0.188; %kg
 
-fplot(@(h) (Tz - g*(mc*((L/2)-Lg)*sin(theta) + ml*find_CoM(theta,R,Lg,h,1))), [0 0.2]);
+% Oil
+ml = 0.169; %kg
 
-%fplot(@(h) (ml*find_CoM(theta,R,Lg,h,1)));
+% Setting up changing torques between points
+
+zero = -0.005949557;
+
+Tz1 = 0.016321445 - zero;
+Tz2 = -0.048950251 - zero;
+Tz3 = -0.094856618 - zero;
+Tz4 = -0.166749024 - zero;
+Tz5 = -0.21446498 - zero;
+Tz6 = 0.378029927 - zero;
+Tz7 = 0.414313405 - zero;
+Tz8 = 0.453699982 - zero;
+Tz9 = 0.483250221 - zero;
+Tz10 = 0.509296794 - zero;
+
+% Setting up changing angles between points
+
+theta1 = 10.0001*pi/180;
+theta2 = 19.714*pi/180;
+theta3 = 29.7169*pi/180;
+theta4 = 39.7129*pi/180;
+theta5 = 49.714*pi/180;
+theta6 = -10.2859*pi/180;
+theta7 = -20.2861*pi/180;
+theta8 = -30.2843*pi/180;
+theta9 = -40.2869*pi/180;
+theta10 = -50.2848*pi/180;
+
+
+%CoM_1
+fplot(@(h) (Tz1 - g*(mc*((L/2)-Lg)*sin(theta1) + ml*find_CoM(theta1,R,Lg,h,1))),[0 0.2]);
+hold on
+
+%CoM_2
+fplot(@(h) (Tz2 - g*(mc*((L/2)-Lg)*sin(theta2) + ml*find_CoM(theta2,R,Lg,h,1))), [0 0.2]);
+
+%CoM_3
+fplot(@(h) (Tz3 - g*(mc*((L/2)-Lg)*sin(theta3) + ml*find_CoM(theta3,R,Lg,h,1))), [0 0.2]);
+
+%CoM_4
+fplot(@(h) (Tz4 - g*(mc*((L/2)-Lg)*sin(theta4) + ml*find_CoM(theta4,R,Lg,h,1))), [0 0.2]);
+
+%CoM_5
+fplot(@(h) (Tz5 - g*(mc*((L/2)-Lg)*sin(theta5) + ml*find_CoM(theta5,R,Lg,h,1))), [0 0.2]);
+
 
 grid on
-title('CoM 10 @ -50.2848 degrees');
+title('Comparison between the height of liquid and torque error across positive angular rotation');
 xlabel('Liquid height (m)');
 ylabel('Error between experimental and calculated torque (Nm)');
 
+legend('CoM_1 @ 10.0001 degrees','CoM_2 @ 19.714 degrees','CoM_3 @ 29.7169 degrees','CoM_4 @ 39.7129 degrees','CoM_5 @ 49.714 degrees');
+
+pause();
+
+hold off;
+
+%CoM_6
+fplot(@(h) (Tz6 - g*(mc*((L/2)-Lg)*sin(theta6) + ml*find_CoM(theta6,R,Lg,h,1))), [0 0.2]);
+hold on
+ 
+%CoM_7
+fplot(@(h) (Tz7 - g*(mc*((L/2)-Lg)*sin(theta7) + ml*find_CoM(theta7,R,Lg,h,1))), [0 0.2]);
+
+%CoM_8
+fplot(@(h) (Tz8 - g*(mc*((L/2)-Lg)*sin(theta8) + ml*find_CoM(theta8,R,Lg,h,1))), [0 0.2]);
+
+%CoM_9
+fplot(@(h) (Tz9 - g*(mc*((L/2)-Lg)*sin(theta9) + ml*find_CoM(theta9,R,Lg,h,1))), [0 0.2]);
+
+%CoM_10
+fplot(@(h) (Tz10 - g*(mc*((L/2)-Lg)*sin(theta10) + ml*find_CoM(theta10,R,Lg,h,1))), [0 0.2]);
+
+grid on
+title('Comparison between the height of liquid and torque error across negative angular rotation');
+xlabel('Liquid height (m)');
+ylabel('Error between experimental and calculated torque (Nm)');
+
+legend('CoM_6 @ -10.2859 degrees','CoM_7 @ -20.2861 degrees','CoM_8 @ -30.2843 degrees','CoM_9 @ -40.2869 degrees','CoM_1_0 @ -50.2848 degrees');
+
+
+%% Calculate the extimate for the volume at a particular angle and height value
+
 h = 0.00;
-
-ans = (Tz - g*(mc*((L/2)-Lg)*sin(theta) + ml*find_CoM(theta,R,Lg,h,1)))
-
+theta = 0*pi/180;
 
 V = ((pi*R^2)*((h/cos(theta)) - 2*R*tan(theta)) + (pi*R^3)*tan(theta))*10^6
 
